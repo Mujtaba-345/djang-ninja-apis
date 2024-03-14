@@ -1,7 +1,6 @@
-from typing import List, Optional
+from typing import List, Optional, Annotated
 from django.contrib.auth.models import User
-from ninja import ModelSchema
-from ninja import Schema
+from ninja import ModelSchema, Schema
 
 
 class UserSchema(ModelSchema):
@@ -22,7 +21,6 @@ class CustomResponseSchema(Schema):
     message: str = None
     status_code: int = None
     success: bool = None
-    error: bool = None
 
 
 class UserListSchema(CustomResponseSchema):
@@ -30,4 +28,8 @@ class UserListSchema(CustomResponseSchema):
 
 
 class UserDetailSchema(CustomResponseSchema):
+    user_data: Optional[UserSchema] = dict()
+
+
+class UserSignupSchema(CustomResponseSchema):
     user_data: Optional[UserSchema] = dict()

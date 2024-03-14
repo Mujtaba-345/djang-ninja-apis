@@ -21,7 +21,7 @@ from api.views import router as blog_router
 from django.conf import settings
 from django.conf.urls.static import static
 
-api = NinjaAPI()
+api = NinjaAPI(title="Django NinjaAPI")
 api.add_router('/blog/', blog_router, tags=["blog"])
 urlpatterns = [
     path('admin/', admin.site.urls),

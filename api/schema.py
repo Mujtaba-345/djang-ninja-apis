@@ -1,4 +1,4 @@
-from typing import List, Optional, Annotated
+from typing import List, Optional
 from django.contrib.auth.models import User
 from ninja import ModelSchema, Schema
 

@@ -12,7 +12,7 @@ def get_users_list(request):
     """
     get list of users
     """
-    user_data = list(User.objects.all())
+    user_data = User.objects.all()
     response_data = {"user_data": user_data, "message": "user data get successfully", "status_code": 200,
                      "success": "true"}
     return response_data
